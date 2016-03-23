@@ -9,8 +9,12 @@ describe("Food", function() {
     assert.equal("spinach", food1.name);
   });
 
-    it('should have a replenishment value' , function() {
-    var food1 = new Food("spinach", 100);
-    assert.equal(100, food1.replenishmentValue);
+  it('should have a replenishment value' , function() {
+     var food1 = new Food("spinach", 100);
+     assert.equal(100, food1.replenishmentValue);
   });
+
+
+
+
 })
