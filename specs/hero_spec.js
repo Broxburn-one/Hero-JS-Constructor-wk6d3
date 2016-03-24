@@ -48,7 +48,10 @@ describe('Hero', function() {
         hero1.eat(food2);
 
         assert.equal(50, hero1.health);
-
-
     });
+
+   it('should have superpower', function() {
+      var hero1 = new Hero("Thor", 100, "steak");
+      assert.equal('Talks your ears off.', hero1.superPower);
+   })
 })
