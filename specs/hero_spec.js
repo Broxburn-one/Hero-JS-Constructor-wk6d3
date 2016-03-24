@@ -1,6 +1,7 @@
 var assert = require('chai').assert;
 var Hero = require('../hero.js');
 var Food = require('../food.js');
+var Rat = require('../rat.js');
 
 describe('Hero', function() {
 
@@ -34,7 +35,20 @@ describe('Hero', function() {
    it('should increase health by 1.5 if fave food', function() {
       var hero1 = new Hero("Thor", 100, "steak");
       var food2 = new Food("steak", 100);
+      var rat1 = new Rat("dirty");
       hero1.eat(food2);
       assert.equal(250, hero1.health)
    });
+
+   it('should lose health if eating poisonous food', function() {
+        var hero1 = new Hero("Thor", 100, "steak");
+        var food2 = new Food("steak", 100);
+        var rat1 = new Rat("dirty");
+        food2.hasTouchedRat(rat1);
+        hero1.eat(food2);
+
+        assert.equal(50, hero1.health);
+
+
+    });
 })
